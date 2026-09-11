@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brew & Bean | Artisan Coffee Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">Brew & Bean<span>.</span></div>
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+        </nav>
+        
+        <div class="header-actions">
+            <!-- Cart Icon Trigger -->
+            <button class="cart-icon-btn" id="cartToggleBtn">
+                🛒 <span class="cart-badge" id="cartCount">0</span>
+            </button>
+            
+            <div class="menu-toggle" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Freshly Roasted, Perfectly Brewed</h1>
+            <p>Experience the finest artisan coffee sourced from sustainable farms around the world, crafted just for you.</p>
+            <div class="hero-btns">
+                <a href="#menu" class="btn primary-btn">Explore Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <h2>Our Signature Drinks</h2>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <div class="card-img coffee-1"></div>
+                <h3>Classic Espresso</h3>
+                <p>Rich, bold, and brewed to perfection with dark roast beans.</p>
+                <div class="card-footer">
+                    <span class="price">$3.50</span>
+                    <button class="btn add-to-cart-btn" onclick="addToCart('Classic Espresso', 3.50)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="menu-card">
+                <div class="card-img coffee-2"></div>
+                <h3>Caramel Macchiato</h3>
+                <p>Espresso with vanilla syrup, steamed milk, and caramel drizzle.</p>
+                <div class="card-footer">
+                    <span class="price">$4.75</span>
+                    <button class="btn add-to-cart-btn" onclick="addToCart('Caramel Macchiato', 4.75)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="menu-card">
+                <div class="card-img coffee-3"></div>
+                <h3>Creamy Iced Latte</h3>
+                <p>Smooth espresso poured over chilled milk and ice.</p>
+                <div class="card-footer">
+                    <span class="price">$4.25</span>
+                    <button class="btn add-to-cart-btn" onclick="addToCart('Creamy Iced Latte', 4.25)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <button class="close-btn" id="closeCartBtn">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <p class="empty-msg">Your cart is currently empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn primary-btn checkout-btn" id="checkoutBtn" disabled>Proceed to Order</button>
+        </div>
+    </aside>
+
+    <!-- Order Form Modal -->
+    <div class="modal-overlay" id="orderModal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModalBtn">&times;</button>
+            <h3>Complete Your Order</h3>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="userName">Full Name</label>
+                    <input type="text" id="userName" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="userPhone">Phone Number</label>
+                    <input type="tel" id="userPhone" required placeholder="+1 234 567 890">
+                </div>
+                <div class="form-group">
+                    <label for="deliveryAddress">Delivery Address / Table #</label>
+                    <textarea id="deliveryAddress" rows="3" required placeholder="Enter delivery address or table number"></textarea>
+                </div>
+                <div class="order-summary-box">
+                    <strong>Total Amount: <span id="modalTotal">$0.00</span></strong>
+                </div>
+                <button type="submit" class="btn primary-btn submit-order-btn">Submit Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Brew & Bean. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
